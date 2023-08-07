@@ -25,6 +25,7 @@ const AddNote = ({ handleAddNote }) => {
   };
   const handleReset = () => {
     setNoteText("");
+    setTitleText("");
   };
   return (
     <div className="note new">

@@ -29,6 +29,20 @@ const App = () => {
     );
   }, [notes])
 
+  useEffect(() => {
+    const savedTheme = JSON.parse(localStorage.getItem("ecrire-theme"));
+    if (savedTheme !== undefined) {
+      setDarkMode(savedTheme);
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(
+      "ecrire-theme",
+      darkMode
+    );
+  }, [darkMode])
+
   const addNote = (title, text) => {
     let newNote = {
       id: nanoid(10),
